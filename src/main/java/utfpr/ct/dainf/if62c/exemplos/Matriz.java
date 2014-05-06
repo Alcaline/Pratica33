@@ -48,20 +48,46 @@ public class Matriz {
     
     /**
      * Retorna a soma desta matriz com a matriz recebida como argumento.
-     * @param mat A matriz a ser somada
+     * @param matB A matriz a ser somada
      * @return A soma das matrizes
      */
-    public Matriz soma(Matriz mat) {
-        throw new UnsupportedOperationException("Soma de matrizes não implementada.");
+    public Matriz soma(Matriz matB) {
+        Matriz matC = new Matriz(mat.length, matB.getMatriz()[0].length);
+        ///*
+        for(int i = 0; i < mat.length; i++){
+            for(int j = 0; j < mat[i].length; j++){
+                matC.getMatriz()[i][j] = mat[i][j] + matB.getMatriz()[i][j];
+            }
+        }
+        //*/
+        /*
+        int i = 0;
+        for(double[] linhas: matC.getMatriz()){
+            int j = 0;
+            i++;
+            for(double elem: linhas){
+                elem = mat[i][j] + matB.getMatriz()[i][j];
+                j++;
+            }
+        }*/
+        
+        return matC;
     }
 
     /**
      * Retorna o produto desta matriz com a matriz recebida como argumento.
-     * @param mat A matriz a ser multiplicada
+     * @param matB A matriz a ser multiplicada
      * @return O produto das matrizes
      */
-    public Matriz prod(Matriz mat) {
-        throw new UnsupportedOperationException("Produto de matrizes não implementado.");
+    public Matriz prod(Matriz matB) {
+        Matriz matC = new Matriz(mat.length, mat[0].length);
+        if(mat[0].length != matB.getMatriz().length)
+            return null;
+        //for(int i = 0; i < matB.){
+            
+        }
+        ///*
+        //for(){}
     }
 
     /**
@@ -77,9 +103,9 @@ public class Matriz {
         for (double[] linha: mat) {
             s.append("[ ");
             for (double x: linha) {
-                s.append(x).append(" ");
+                s.append(x).append(" | ");
             }
-            s.append("]");
+            s.append("]\n");
         }
         return s.toString();
     }
