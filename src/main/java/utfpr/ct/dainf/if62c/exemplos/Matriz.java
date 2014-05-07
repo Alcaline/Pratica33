@@ -72,10 +72,11 @@ public class Matriz {
         Matriz matC = new Matriz(mat.length, matB.getMatriz()[0].length);
         if(mat[0].length != matB.getMatriz().length)
             return null;
-        for(int i = 0; i < mat.length(); i++)
-            for(int j = 0; j < matB.getMatriz()[0].length(); j++)
-                for(int k = 0; k < matB.getMatriz().length(); k++)
+        for(int i = 0; i < mat.length; i++)
+            for(int j = 0; j < matB.getMatriz()[0].length; j++)
+                for(int k = 0; k < matB.getMatriz().length; k++)
                     matC.getMatriz()[i][j] += mat[i][k] * matB.getMatriz()[k][j];
+        return matC;
     }
 
     /**
