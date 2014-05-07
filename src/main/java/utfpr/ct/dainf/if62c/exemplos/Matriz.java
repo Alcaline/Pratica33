@@ -53,7 +53,6 @@ public class Matriz {
      */
     public Matriz soma(Matriz matB) {
         Matriz matC = new Matriz(mat.length, matB.getMatriz()[0].length);
-        ///*
         for(int i = 0; i < mat.length; i++){
             for(int j = 0; j < mat[i].length; j++){
                 matC.getMatriz()[i][j] = mat[i][j] + matB.getMatriz()[i][j];
