@@ -59,18 +59,7 @@ public class Matriz {
                 matC.getMatriz()[i][j] = mat[i][j] + matB.getMatriz()[i][j];
             }
         }
-        //*/
-        /*
-        int i = 0;
-        for(double[] linhas: matC.getMatriz()){
-            int j = 0;
-            i++;
-            for(double elem: linhas){
-                elem = mat[i][j] + matB.getMatriz()[i][j];
-                j++;
-            }
-        }*/
-        
+
         return matC;
     }
 
@@ -80,14 +69,13 @@ public class Matriz {
      * @return O produto das matrizes
      */
     public Matriz prod(Matriz matB) {
-        Matriz matC = new Matriz(mat.length, mat[0].length);
+        Matriz matC = new Matriz(mat.length, matB.getMatriz()[0].length);
         if(mat[0].length != matB.getMatriz().length)
             return null;
-        //for(int i = 0; i < matB.){
-            
-        }
-        ///*
-        //for(){}
+        for(int i = 0; i < mat.length(); i++)
+            for(int j = 0; j < matB.getMatriz()[0].length(); j++)
+                for(int k = 0; k < matB.getMatriz().length(); k++)
+                    matC.getMatriz()[i][j] += mat[i][k] * matB.getMatriz()[k][j];
     }
 
     /**
