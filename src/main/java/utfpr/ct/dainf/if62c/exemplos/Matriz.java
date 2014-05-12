@@ -48,34 +48,34 @@ public class Matriz {
     
     /**
      * Retorna a soma desta matriz com a matriz recebida como argumento.
-     * @param matB A matriz a ser somada
+     * @param mat A matriz a ser somada
      * @return A soma das matrizes
      */
-    public Matriz soma(Matriz matB) {
-        Matriz matC = new Matriz(mat.length, matB.getMatriz()[0].length);
-        for(int i = 0; i < mat.length; i++){
-            for(int j = 0; j < mat[i].length; j++){
-                matC.getMatriz()[i][j] = mat[i][j] + matB.getMatriz()[i][j];
+    public Matriz soma(Matriz mat) {
+        Matriz m = new Matriz(this.mat.length, mat.getMatriz()[0].length);
+        for(int i = 0; i < this.mat.length; i++){
+            for(int j = 0; j < this.mat[i].length; j++){
+                m.getMatriz()[i][j] = this.mat[i][j] + mat.getMatriz()[i][j];
             }
         }
 
-        return matC;
+        return m;
     }
 
     /**
      * Retorna o produto desta matriz com a matriz recebida como argumento.
-     * @param matB A matriz a ser multiplicada
+     * @param mat A matriz a ser multiplicada
      * @return O produto das matrizes
      */
-    public Matriz prod(Matriz matB) {
-        Matriz matC = new Matriz(mat.length, matB.getMatriz()[0].length);
-        if(mat[0].length != matB.getMatriz().length)
+    public Matriz prod(Matriz mat) {
+        Matriz m = new Matriz(this.mat.length, mat.getMatriz()[0].length);
+        if(this.mat[0].length != mat.getMatriz().length)
             return null;
-        for(int i = 0; i < mat.length; i++)
-            for(int j = 0; j < matB.getMatriz()[0].length; j++)
-                for(int k = 0; k < matB.getMatriz().length; k++)
-                    matC.getMatriz()[i][j] += mat[i][k] * matB.getMatriz()[k][j];
-        return matC;
+        for(int i = 0; i < this.mat.length; i++)
+            for(int j = 0; j < mat.getMatriz()[0].length; j++)
+                for(int k = 0; k < mat.getMatriz().length; k++)
+                    m.getMatriz()[i][j] += this.mat[i][k] * mat.getMatriz()[k][j];
+        return m;
     }
 
     /**
